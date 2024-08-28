@@ -1706,6 +1706,10 @@ input, select, textarea {
 					margin-left: -20px;
 				}
 
+				.row > .googleServiceMap {
+					padding: 0;
+				}
+
 					.row > * {
 						padding: 20px 0 0 20px;
 					}
@@ -2787,6 +2791,10 @@ input, select, textarea {
 				font-size: 1.75em;
 			}
 
+			.introInfo {
+				font-size: 75%;
+			}
+
 			h3 {
 				font-size: 1.25em;
 			}
@@ -2817,7 +2825,7 @@ input, select, textarea {
 		/* Image */
 
 			.image.featured {
-				margin: 0 0 2em 0;
+				margin: 1em 0 2em 0;
 			}
 
 			.image.left {
