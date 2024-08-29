@@ -51,7 +51,7 @@
 									</header>
 									<hr/>
 									<section class="reqServSec">
-										<form class="reqServForm">
+										<form class="reqServForm" id="contact-form">
 											<label for="name">Name:</label>
 											<input type="text" id="name" name="name" required>
 									
@@ -64,6 +64,25 @@
 											<button type="submit">Send</button>
 											</div>
 										</form>
+
+										    <!-- Include EmailJS script -->
+										<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+										<script type="text/javascript">
+											// Initialize EmailJS with your user ID
+											emailjs.init("Gmail");
+
+											document.getElementById('contact-form').addEventListener('submit', function(event) {
+												event.preventDefault();
+
+												// These IDs correspond to the form and template IDs in your EmailJS account
+												emailjs.sendForm('service_9lwqd67', 'Gmail', this)
+													.then(function() {
+														alert('Message sent successfully!');
+													}, function(error) {
+														alert('Failed to send message. Please try again.');
+													});
+											});
+										</script>
 									</section>
 								</article>
 							</div>
