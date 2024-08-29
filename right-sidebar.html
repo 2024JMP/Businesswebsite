@@ -65,17 +65,16 @@
 											</div>
 										</form>
 
-										    <!-- Include EmailJS script -->
 										<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
 										<script type="text/javascript">
 											// Initialize EmailJS with your user ID
-											emailjs.init("Gmail");
+											emailjs.init("72wAcQ0jzTJtM1uDC");
 
 											document.getElementById('contact-form').addEventListener('submit', function(event) {
 												event.preventDefault();
 
 												// These IDs correspond to the form and template IDs in your EmailJS account
-												emailjs.sendForm('service_9lwqd67', 'Gmail', this)
+												emailjs.sendForm('service_9lwqd67', 'template_clnwtrn', this)
 													.then(function() {
 														alert('Message sent successfully!');
 													}, function(error) {
@@ -260,7 +259,7 @@
 									</header>
 									<ul>
 										<li>
-											<p><span style="font-weight: bold;">Leave Us A Review!</span><a href="https://g.page/r/CRDEWYt84ht2EBM/review"> Here!</a></p>
+											<p><span style="font-weight: bold;">Leave Us A Review!</span><a href="https://g.page/r/CRDEWYt84ht2EBM/review" target="_blank"> Here!</a></p>
 										</li>
 										<li>
 											<p><span style="font-weight: bold;">Request Service:</span><a href="./right-sidebar.html"> Form</a></p>
