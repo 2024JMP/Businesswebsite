@@ -84,7 +84,7 @@ input, select, textarea {
 
 	body {
 		background: #f0f4f4;
-		color: #5b5b5b;
+		color: #000000;
 		font-size: 15pt;
 		line-height: 1.85em;
 		font-family: 'Source Sans Pro', sans-serif;
@@ -111,7 +111,7 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
-		color: #483949;
+		color: #000000;
 		line-height: 1.25em;
 	}
 
@@ -140,7 +140,7 @@ input, select, textarea {
 
 	strong, b {
 		font-weight: 400;
-		color: #483949;
+		color: #000000;
 	}
 
 	em, i {
@@ -1968,7 +1968,7 @@ input, select, textarea {
 	form label {
 		display: block;
 		font-weight: 400;
-		color: #483949;
+		color: #000000;
 		margin: 0 0 1em 0;
 	}
 
@@ -2012,19 +2012,19 @@ input, select, textarea {
 	}
 
 	form ::-webkit-input-placeholder {
-		color: #555 !important;
+		color: #000000 !important;
 	}
 
 	form :-moz-placeholder {
-		color: #555 !important;
+		color: #000000 !important;
 	}
 
 	form ::-moz-placeholder {
-		color: #555 !important;
+		color: #000000 !important;
 	}
 
 	form :-ms-input-placeholder {
-		color: #555 !important;
+		color: #000000 !important;
 	}
 
 	form ::-moz-focus-inner {
@@ -2496,7 +2496,7 @@ input, select, textarea {
 
 		#footer .icon.circled {
 			background: #fff;
-			color: #2b252c;
+			color: #000000;
 		}
 
 		#footer header {
