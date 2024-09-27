@@ -2080,7 +2080,7 @@ button,
 .button {
     position: relative;
     display: inline-block;
-    background: #333; /* Dark grey background */
+    background: #292929; /* Dark grey background */
     color: #fff; /* White text */
     text-align: center;
     border-radius: 0.5em;
@@ -2090,7 +2090,7 @@ button,
     cursor: pointer;
     outline: 0;
     font-weight: normal;
-    transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-color 0.35s ease-in-out;
+    transition: all 0.7s ease;
 }
 
 /* Pseudo-element and hover effect for all buttons */
@@ -2100,14 +2100,14 @@ input[type="submit"]:before,
 input[type="reset"]:before,
 .button:before {
     content: ' ';
-    border: 2px transparent solid;
+    border: 10px transparent solid;
     position: absolute;
-    left: 50%;
-    top: 0px;
-    transform: translateX(-50%);
+    left: 0;
+    top: 0;
+    transform: translateX(5.5%) translateY(5.5%);
     box-sizing: border-box;
-    width: 120px;
-    height: 50px;
+    width: 90%;
+    height: 90%;
     transition: all 0.7s ease;
 }
 
@@ -2116,7 +2116,7 @@ input[type="button"]:hover:before,
 input[type="submit"]:hover:before,
 input[type="reset"]:hover:before,
 .button:hover:before {
-    border-radius: 30px;
+    border-radius: 0.5em;
     border: 1px solid #df7266; /* Border color remains #df7266 on hover */
 }
 
@@ -2129,6 +2129,7 @@ button:hover,
     border-radius: 1em; /* Rounded corners on hover */
     color: #fff; /* Keep text white */
     border: 2px solid #df7266; /* Border remains #df7266 on hover */
+	background: #393939;
 }
 
 /* Alt button styles */
@@ -2274,17 +2275,6 @@ button.alt:hover,
 			#header h1 a {
 				color: inherit;
 			}
-
-		#header .button {
-			display: inline-block;
-			border-radius: 0.5em;
-			/* width: 4.5em;
-			height: 4.5em;
-			line-height: 4.5em; */
-			text-align: center;
-			/* font-size: 1.25em; */
-			padding: 0.65em 3em 0.65em 3em;
-		}
 
 		#header hr {
 			top: 1.5em;
