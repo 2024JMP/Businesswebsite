@@ -2080,13 +2080,13 @@ input, select, textarea {
 	.button {
 		position: relative;
 		display: inline-block;
-		background: #df7266;
+		background: #333;
 		color: #fff;
 		text-align: center;
 		border-radius: 0.5em;
 		text-decoration: none;
 		padding: 0.65em 3em 0.65em 3em;
-		border: 0;
+		border: 2px solid #df7266;
 		cursor: pointer;
 		outline: 0;
 		font-weight: normal;
@@ -2102,7 +2102,8 @@ input, select, textarea {
 		button:hover,
 		.button:hover {
 			color: #fff;
-			background: #ef8376;
+			background: #df7266;
+			border: 2px solid #df7266
 		}
 
 		input[type="button"].alt,
@@ -2250,13 +2251,13 @@ input, select, textarea {
 
 		#header .button {
 			display: inline-block;
-			border-radius: 100%;
-			width: 4.5em;
+			border-radius: 0.5em;
+			/* width: 4.5em;
 			height: 4.5em;
-			line-height: 4.5em;
+			line-height: 4.5em; */
 			text-align: center;
-			font-size: 1.25em;
-			padding: 0;
+			/* font-size: 1.25em; */
+			padding: 0.65em 3em 0.65em 3em;
 		}
 
 		#header hr {
