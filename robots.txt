@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private-data/
+
+# Allow critical pages
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.johnsmobileprogramming.com/sitemap.xml
