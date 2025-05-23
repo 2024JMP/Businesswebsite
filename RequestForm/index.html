@@ -1,316 +1,500 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
 	Helios by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html lang="en">
-	<head>
-		<title>John's Mobile Programming - Module Programming & Diagnostics</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Expert module programming and advanced diagnostics for all vehicle makes, including ECM, TCM, BCM solutions. Get top-notch automotive programming and diagnostic services." />
-		<meta name="keywords" content="Vehicle Module Programming, Automotive Diagnostic Services, Smart Key Programming, Car Computer Reprogramming, Automotive Electrical Diagnosis, Car Network Diagnostics, Automotive Module Flashing, Mobile Car Programming, Car Module Programming near Me, Advanced Vehicle Diagnostics, Mobile Vehicle Programming Near Me, Immobilizer Reset" />
-		<link rel="canonical" href="https://www.johnsmobileprogramming.com/" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
-		<meta property="og:title" content="Johns Mobile Programming - Homepage" />
-		<meta property="og:description" content="John's Mobile Programming offers mobile automotive programming and diagnostic solutions that come to you!" />
-		<meta property="og:image" content="https://www.johnsmobileprogramming.com/images/pic06.jpg" />
-		<meta property="og:url" content="https://www.johnsmobileprogramming.com" />
-		<link rel="stylesheet" href="/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="/assets/css/main.css" /></noscript>
-	</head>
-	<body class="right-sidebar is-preload">
-		<div id="page-wrapper">
+  <head>
+    <title>John's Mobile Programming - Module Programming & Diagnostics</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Expert module programming and advanced diagnostics for all vehicle makes, including ECM, TCM, BCM solutions. Get top-notch automotive programming and diagnostic services."
+    />
+    <meta
+      name="keywords"
+      content="Vehicle Module Programming, Automotive Diagnostic Services, Smart Key Programming, Car Computer Reprogramming, Automotive Electrical Diagnosis, Car Network Diagnostics, Automotive Module Flashing, Mobile Car Programming, Car Module Programming near Me, Advanced Vehicle Diagnostics, Mobile Vehicle Programming Near Me, Immobilizer Reset"
+    />
+    <link rel="canonical" href="https://www.johnsmobileprogramming.com/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:title" content="Johns Mobile Programming - Homepage" />
+    <meta
+      property="og:description"
+      content="John's Mobile Programming offers mobile automotive programming and diagnostic solutions that come to you!"
+    />
+    <meta
+      property="og:image"
+      content="https://www.johnsmobileprogramming.com/images/pic06.jpg"
+    />
+    <meta property="og:url" content="https://www.johnsmobileprogramming.com" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="/assets/css/main.css" /></noscript>
+  </head>
+  <body class="right-sidebar is-preload">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <div id="header">
+        <!-- Inner -->
+        <div class="inner">
+          <header>
+            <h1><a href="/" id="logo">John's Mobile Programming</a></h1>
+          </header>
+        </div>
 
-			<!-- Header -->
-				<div id="header">
+        <!-- Nav -->
+        <nav id="nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/AboutUs/">About Us</a></li>
+            <li><a href="/RequestForm/">Request Service</a></li>
+          </ul>
+        </nav>
+      </div>
 
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="/" id="logo">John's Mobile Programming</a></h1>
-							</header>
-						</div>
+      <!-- Main -->
+      <div class="wrapper style1">
+        <div class="container">
+          <div class="row gtr-200">
+            <div class="col-8 col-12-mobile" id="content">
+              <article id="main">
+                <header>
+                  <h2>Request Service Form</h2>
+                  <p>
+                    Please leave your name or business name and a phone number
+                    where we can reach you. We will get back to you as soon as
+                    possible. Thanks!
+                  </p>
+                </header>
+                <section class="reqServSec">
+                  <form class="reqServForm" id="contact-form" onsubmit="return validateForm(event)">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name" required 
+                           pattern="[A-Za-z0-9\s\-']{2,50}" 
+                           title="Please enter a valid name (2-50 characters, letters, numbers, spaces, hyphens, and apostrophes only)"
+                           maxlength="50" />
 
-					<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="/">Home</a></li>
-							<li><a href="/AboutUs/">About Us</a></li>
-							<li><a href="/RequestForm/">Request Service</a></li>
-						</ul>
-					</nav>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="user_phone"
+                           pattern="[0-9\-\(\)\s]{10,15}"
+                           title="Please enter a valid phone number *Optional"
+                           maxlength="15" />
 
-				</div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="user_email" required 
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                           title="Please enter a valid email address"
+                           maxlength="100" />
 
-			<!-- Main -->
-				<div class="wrapper style1">
+                    <label for="message">Message:</label>
+                    <textarea
+                      id="message"
+                      name="user_message"
+                      rows="5"
+                      required
+                      maxlength="1000"
+                      pattern="[A-Za-z0-9\s\-'.,!?]{10,1000}"
+                      title="Please enter a valid message (10-1000 characters)"
+                    ></textarea>
+                    <div
+                      style="
+                        margin-top: 5%;
+                        display: flex;
+                        justify-content: flex-end;
+                      "
+                    >
+                      <button type="submit" id="submitBtn">Send</button>
+                    </div>
+                  </form>
 
-					<div class="container">
-						<div class="row gtr-200">
-							<div class="col-8 col-12-mobile" id="content">
-								<article id="main">
-									<header>
-										<h2>Request Service Form</h2>
-										<p>
-											Please leave your name or business name and a phone number where we can reach you. We will get back to you as soon as possible. Thanks!
-										</p>
-									</header>
-									<section class="reqServSec">
-										<form class="reqServForm" id="contact-form">
-											<label for="name">Name:</label>
-											<input type="text" id="name" name="name" required>
-									
-											<label for="email">Email:</label>
-											<input type="email" id="email" name="email" required>
-									
-											<label for="message">Message:</label>
-											<textarea id="message" name="message" rows="5" required></textarea>
-											<div style="margin-top: 5%; display: flex; justify-content: flex-end;">
-											<button type="submit">Send</button>
-											</div>
-										</form>
+                  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+                  <script type="text/javascript">
+                    // Initialize EmailJS with your user ID
+                    emailjs.init("72wAcQ0jzTJtM1uDC");
 
-										<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
-										<script type="text/javascript">
-											// Initialize EmailJS with your user ID
-											emailjs.init("72wAcQ0jzTJtM1uDC");
+                    // Rate limiting implementation
+                    const RATE_LIMIT = 3; // Maximum submissions per hour
+                    const RATE_LIMIT_WINDOW = 3600000; // 1 hour in milliseconds
+                    let submissionCount = 0;
+                    let lastSubmissionTime = 0;
 
-											document.getElementById('contact-form').addEventListener('submit', function(event) {
-												event.preventDefault();
+                    function validateForm(event) {
+                      event.preventDefault();
+                      
+                      // Rate limiting check
+                      const now = Date.now();
+                      if (now - lastSubmissionTime > RATE_LIMIT_WINDOW) {
+                        submissionCount = 0;
+                      }
+                      
+                      if (submissionCount >= RATE_LIMIT) {
+                        alert("Too many submissions. Please try again later.");
+                        return false;
+                      }
 
-												// These IDs correspond to the form and template IDs in your EmailJS account
-												emailjs.sendForm('service_9lwqd67', 'template_clnwtrn', this)
-													.then(function() {
-														alert('Message sent successfully!');
-													}, function(error) {
-														alert('Failed to send message. Please try again.');
-													});
-											});
-										</script>
-									</section>
-								</article>
-							</div>
-							<div class="col-4 col-12-mobile" id="sidebar">
-								<section>
-									<header>
-										<h3>Programming Available For:</h3>
-									</header>
-									<!-- <p>
+                      // Get form data
+                      const form = document.getElementById('contact-form');
+                      const formData = new FormData(form);
+                      
+                      // Create template parameters
+                      const templateParams = {
+                        from_name: formData.get('user_name'),
+                        from_email: formData.get('user_email'),
+                        phone_number: formData.get('user_phone'),
+                        message: formData.get('user_message')
+                      };
+
+                      // Disable submit button
+                      const submitBtn = document.getElementById('submitBtn');
+                      submitBtn.disabled = true;
+                      submitBtn.textContent = 'Sending...';
+
+                      // Send the form
+                      emailjs.send("service_9lwqd67", "template_clnwtrn", templateParams)
+                        .then(
+                          function() {
+                            alert("Message sent successfully!");
+                            submissionCount++;
+                            lastSubmissionTime = Date.now();
+                            form.reset();
+                          },
+                          function(error) {
+                            alert("Failed to send message. Please try again.");
+                            console.error("EmailJS error:", error);
+                          }
+                        )
+                        .finally(() => {
+                          submitBtn.disabled = false;
+                          submitBtn.textContent = 'Send';
+                        });
+
+                      return false;
+                    }
+                  </script>
+                </section>
+              </article>
+            </div>
+            <div class="col-4 col-12-mobile" id="sidebar">
+              <section>
+                <header>
+                  <h3>Programming Available For:</h3>
+                </header>
+                <!-- <p>
 										Tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
 									</p> -->
-									<div class="row gtr-50">
-										<div class="col-4">
-											<div class="image fit"><img src="/images/CarLogos/Ford-logo.jpg" alt="Image of Ford Logo" /></div>
-										</div>
-										<div class="col-8">
-											<h4>Ford</h4>
-										</div>
-										<div class="col-4">
-											<div class="image fit"><img src="/images/CarLogos/Chevrolet-logo.jpg" alt="Image of Chevrolet Logo" /></div>
-										</div>
-										<div class="col-8">
-											<h4>Chevrolet</h4>
-										</div>
-										<div class="col-4">
-											<div class="image fit"><img src="/images/CarLogos/GMC-logo.jpg" alt="Image of GMC Logo" /></div>
-										</div>
-										<div class="col-8">
-											<h4>GMC</h4>
-										</div>
-										<div class="col-4">
-											<div class="image fit"><img src="/images/CarLogos/RAM-logo.jpg" alt="Image of Dodge RAM Logo" /></div>
-										</div>
-										<div class="col-8">
-											<h4>RAM</h4>
-										</div>
-										<div class="col-4">
-											<div class="image fit"><img src="/images/CarLogos/toyota-logo.jpg" alt="Image of Toyota Logo" /></div>
-										</div>
-										<div class="col-8">
-											<h4>Toyota</h4>
-										</div>
-										<div class="col-4">
-											<div class="image fit"><img src="/images/CarLogos/lexus-logo.jpg" alt="Image of Lexus Logo" /></div>
-										</div>
-										<div class="col-8">
-											<h4>Lexus</h4>
-										</div>
-										<div class="col-4">
-											<div class="image fit"><img src="/images/CarLogos/honda-logo.jpg" alt="Image of Honda Logo" /></div>
-										</div>
-										<div class="col-8">
-											<h4>Honda</h4>
-										</div>
-										<div class="col-4">
-											<div class="image fit"><img src="/images/CarLogos/acura-logo.jpg" alt="Image of Acura Logo" /></div>
-										</div>
-										<div class="col-8">
-											<h4>Acura</h4>
-										</div>
-										<div class="col-4">
-											<div class="image fit"><img src="/images/CarLogos/dodge-logo.jpg" alt="Image of Dodge Logo" /></div>
-										</div>
-										<div class="col-8">
-											<h4>Dodge</h4>
-										</div>
-										<div class="col-4">
-											<div class="image fit"><img src="/images/CarLogos/cadillac-logo.jpg" alt="Image of Cadillac Logo" /></div>
-										</div>
-										<div class="col-8">
-											<h4>Cadillac</h4>
-										</div>
-										<div class="col-4">
-											<div class="image fit"><img src="/images/CarLogos/chrysler-logo.jpg" alt="Image of Chrysler Logo" /></div>
-										</div>
-										<div class="col-8">
-											<h4>Chrysler</h4>
-										</div>
-										<div class="col-8">
-											<h4>And Many More...</h4>
-											<p><span style="font-weight: bold; font-size: small;">Lincoln, Mercury, Pontiac, Oldsmobile, Buick, Saturn, Scion, Jeep, Fiat and Alfa Romeo</span></p>
-										</div>
-										<p></p>
-									</div>
-									<footer>
-										<!-- <a href="#" class="button">Magna Adipiscing</a> -->
-									</footer>
-								</section>
-							</div>
-						</div>
-						<hr />
-						<div class="row">
-							<article class="col-4 col-12-mobile special">
-								<header>
-									<h1 style="font-size: 1.25em;">Advanced Diagnostics</h1>
-								</header>
-								<ul>
-									<li>
-										Electrical Systems
-									</li>
-									<li>
-										Communication Networks
-									</li>
-									<li>
-										Computer / Module 
-									</li>
-									<li>
-										Electric Vehicles
-									</li>
-									<li>
-										Hybrid Vehicles
-									</li>
-									<li>
-										Advance Driver Assistance Systems (ADAS)
-									</li>
-									<li>
-										Tire Pressure Monitoring System (TPMS)
-									</li>
-									<li>
-										Drivability Concerns
-									</li>
-								</ul>
-							</article>
-							<article class="col-4 col-12-mobile special">
-								<header>
-									<h1 style="font-size: 1.25em;">Vehicle Programming</h1>
-								</header>
-								<p>
-									We specialize in vehicle module flashing and programming with the same precision and expertise as a dealership. 
-									Our advanced capabilities ensure that your vehicle's systems, including ECM (Engine Control Module), TCM (Transmission Control Module), and BCM (Body Control Module) are updated and optimized to the highest standards, without the dealership overhead. 
-									Trust in us for dealership-level quality with the personalized attention only independent experts can provide.
-								</p>
-							</article>
-							<article class="col-4 col-12-mobile special">
-								<header>
-									<h1 style="font-size: 1.25em;">Security Programming</h1>
-								</header>
-								<p>
-									We provide expert services in PIN / Security Code retrieval for advanced vehicle security systems. 
-									Our precision ensures that your vehicle's security components, such as immobilizer resets and smart key programming are fully functional.  
-									Delivering dealership-level expertise with a focus on security and reliability.
-								</p>
-							</article>
-						</div>
-					</div>
+                <div class="row gtr-50">
+                  <div class="col-4">
+                    <div class="image fit">
+                      <img
+                        src="/images/CarLogos/Ford-logo.jpg"
+                        alt="Image of Ford Logo"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4>Ford</h4>
+                  </div>
+                  <div class="col-4">
+                    <div class="image fit">
+                      <img
+                        src="/images/CarLogos/Chevrolet-logo.jpg"
+                        alt="Image of Chevrolet Logo"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4>Chevrolet</h4>
+                  </div>
+                  <div class="col-4">
+                    <div class="image fit">
+                      <img
+                        src="/images/CarLogos/GMC-logo.jpg"
+                        alt="Image of GMC Logo"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4>GMC</h4>
+                  </div>
+                  <div class="col-4">
+                    <div class="image fit">
+                      <img
+                        src="/images/CarLogos/RAM-logo.jpg"
+                        alt="Image of Dodge RAM Logo"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4>RAM</h4>
+                  </div>
+                  <div class="col-4">
+                    <div class="image fit">
+                      <img
+                        src="/images/CarLogos/toyota-logo.jpg"
+                        alt="Image of Toyota Logo"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4>Toyota</h4>
+                  </div>
+                  <div class="col-4">
+                    <div class="image fit">
+                      <img
+                        src="/images/CarLogos/lexus-logo.jpg"
+                        alt="Image of Lexus Logo"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4>Lexus</h4>
+                  </div>
+                  <div class="col-4">
+                    <div class="image fit">
+                      <img
+                        src="/images/CarLogos/honda-logo.jpg"
+                        alt="Image of Honda Logo"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4>Honda</h4>
+                  </div>
+                  <div class="col-4">
+                    <div class="image fit">
+                      <img
+                        src="/images/CarLogos/acura-logo.jpg"
+                        alt="Image of Acura Logo"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4>Acura</h4>
+                  </div>
+                  <div class="col-4">
+                    <div class="image fit">
+                      <img
+                        src="/images/CarLogos/dodge-logo.jpg"
+                        alt="Image of Dodge Logo"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4>Dodge</h4>
+                  </div>
+                  <div class="col-4">
+                    <div class="image fit">
+                      <img
+                        src="/images/CarLogos/cadillac-logo.jpg"
+                        alt="Image of Cadillac Logo"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4>Cadillac</h4>
+                  </div>
+                  <div class="col-4">
+                    <div class="image fit">
+                      <img
+                        src="/images/CarLogos/chrysler-logo.jpg"
+                        alt="Image of Chrysler Logo"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4>Chrysler</h4>
+                  </div>
+                  <div class="col-8">
+                    <h4>And Many More...</h4>
+                    <p>
+                      <span style="font-weight: bold; font-size: small"
+                        >Lincoln, Mercury, Pontiac, Oldsmobile, Buick, Saturn,
+                        Scion, Jeep, Fiat and Alfa Romeo</span
+                      >
+                    </p>
+                  </div>
+                  <p></p>
+                </div>
+                <footer>
+                  <!-- <a href="#" class="button">Magna Adipiscing</a> -->
+                </footer>
+              </section>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <article class="col-4 col-12-mobile special">
+              <header>
+                <h1 style="font-size: 1.25em">Advanced Diagnostics</h1>
+              </header>
+              <ul>
+                <li>Electrical Systems</li>
+                <li>Communication Networks</li>
+                <li>Computer / Module</li>
+                <li>Electric Vehicles</li>
+                <li>Hybrid Vehicles</li>
+                <li>Advance Driver Assistance Systems (ADAS)</li>
+                <li>Tire Pressure Monitoring System (TPMS)</li>
+                <li>Drivability Concerns</li>
+              </ul>
+            </article>
+            <article class="col-4 col-12-mobile special">
+              <header>
+                <h1 style="font-size: 1.25em">Vehicle Programming</h1>
+              </header>
+              <p>
+                We specialize in vehicle module flashing and programming with
+                the same precision and expertise as a dealership. Our advanced
+                capabilities ensure that your vehicle's systems, including ECM
+                (Engine Control Module), TCM (Transmission Control Module), and
+                BCM (Body Control Module) are updated and optimized to the
+                highest standards, without the dealership overhead. Trust in us
+                for dealership-level quality with the personalized attention
+                only independent experts can provide.
+              </p>
+            </article>
+            <article class="col-4 col-12-mobile special">
+              <header>
+                <h1 style="font-size: 1.25em">Security Programming</h1>
+              </header>
+              <p>
+                We provide expert services in PIN / Security Code retrieval for
+                advanced vehicle security systems. Our precision ensures that
+                your vehicle's security components, such as immobilizer resets
+                and smart key programming are fully functional. Delivering
+                dealership-level expertise with a focus on security and
+                reliability.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
 
-				</div>
-
-			<!-- Footer -->
-			<div id="footer">
-				<div class="container" style="width: 100%; padding: 2%;">
-					<div class="row">
-						<div class="googleServiceMap">
-							<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AwEeMqFPAt6DPaYtFzZuVCq_BRtmyMc&ehbc=2E312F&noprof=1"
-							width="463"
-							height="391"
-							title="Google Maps Location for Johns Mobile Programming services offered. (Rathdrum, Hayden, Post Falls, Coeur d'Alene,Athol, Ponderay)"
-							aria-label="Google Maps showing pins of towns within idaho where Johns Mobile Programming is offering services."
-							></iframe>
-						</div>
-						<div class="col-4 col-12-mobile">
-							<!-- Contact -->
-								<section class="contact">
-									<header>
-										<h3 style="color: #ef8376;">CONTACT INFO:</h3>
-									</header>
-									<ul>
-										<li>
-											<h4 style="margin-bottom: 1em;"><span style="font-weight: bold;">Leave Us A Review!</span><a href="https://g.page/r/CRDEWYt84ht2EBM/review" target="_blank" aria-label="Leave Us A Review, opens in a new tab"><span style="font-weight: lighter;"> Here</span></a></h4>
-										</li>
-										<li>
-											<h4 style="margin-bottom: 1em;"><span style="font-weight: bold;">Request Service:</span><a href="/RequestForm/"><span style="font-weight: lighter;"> Form</span></a></h4>
-										</li>
-										<li>
-											<h4 style="margin-bottom: 1em;"><span style="font-weight: bold;">Phone:</span><a href="tel:+1208-215-6447"><span style="font-weight: lighter;"> +1 (208) 215-6447</span></a></h4>
-										</li>
-										<li>
-											<h4 style="margin-bottom: 1em;"><span style="font-weight: bold;">Email:</span><a href="mailto:johnsmobileprogramming@gmail.com" target="_blank" aria-label="Email johnsmobileprogramming@gmail.com, opens in a new tab"><span style="font-weight: lighter;"> johnsmobileprogramming@gmail.com</span></a></h4>
-										</li>
-									</ul>
-									<ul class="icons">
-										<li><a href="https://www.facebook.com/profile.php?id=61564522806712" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<!-- <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
-										<!-- <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li> -->
-									</ul>
-								</section>
-						</div>
-						<section class="col-4 col-12-mobile">
-							<!-- <header>
+      <!-- Footer -->
+      <div id="footer">
+        <div class="container" style="width: 100%; padding: 2%">
+          <div class="row">
+            <div class="googleServiceMap">
+              <iframe
+                src="https://www.google.com/maps/d/u/0/embed?mid=1AwEeMqFPAt6DPaYtFzZuVCq_BRtmyMc&ehbc=2E312F&noprof=1"
+                width="463"
+                height="391"
+                title="Google Maps Location for Johns Mobile Programming services offered. (Rathdrum, Hayden, Post Falls, Coeur d'Alene,Athol, Ponderay)"
+                aria-label="Google Maps showing pins of towns within idaho where Johns Mobile Programming is offering services."
+              ></iframe>
+            </div>
+            <div class="col-4 col-12-mobile">
+              <!-- Contact -->
+              <section class="contact">
+                <header>
+                  <h3 style="color: #ef8376">CONTACT INFO:</h3>
+                </header>
+                <ul>
+                  <li>
+                    <h4 style="margin-bottom: 1em">
+                      <span style="font-weight: bold">Leave Us A Review!</span
+                      ><a
+                        href="https://g.page/r/CRDEWYt84ht2EBM/review"
+                        target="_blank"
+                        aria-label="Leave Us A Review, opens in a new tab"
+                        ><span style="font-weight: lighter"> Here</span></a
+                      >
+                    </h4>
+                  </li>
+                  <li>
+                    <h4 style="margin-bottom: 1em">
+                      <span style="font-weight: bold">Request Service:</span
+                      ><a href="/RequestForm/"
+                        ><span style="font-weight: lighter"> Form</span></a
+                      >
+                    </h4>
+                  </li>
+                  <li>
+                    <h4 style="margin-bottom: 1em">
+                      <span style="font-weight: bold">Phone:</span
+                      ><a href="tel:+1208-215-6447"
+                        ><span style="font-weight: lighter">
+                          +1 (208) 215-6447</span
+                        ></a
+                      >
+                    </h4>
+                  </li>
+                  <li>
+                    <h4 style="margin-bottom: 1em">
+                      <span style="font-weight: bold">Email:</span
+                      ><a
+                        href="mailto:johnsmobileprogramming@gmail.com"
+                        target="_blank"
+                        aria-label="Email johnsmobileprogramming@gmail.com, opens in a new tab"
+                        ><span style="font-weight: lighter">
+                          johnsmobileprogramming@gmail.com</span
+                        ></a
+                      >
+                    </h4>
+                  </li>
+                </ul>
+                <ul class="icons">
+                  <li>
+                    <a
+                      href="https://www.facebook.com/profile.php?id=61564522806712"
+                      target="_blank"
+                      class="icon brands fa-facebook-f"
+                      ><span class="label">Facebook</span></a
+                    >
+                  </li>
+                  <!-- <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
+                  <!-- <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li> -->
+                </ul>
+              </section>
+            </div>
+            <section class="col-4 col-12-mobile">
+              <!-- <header>
 								<h2 class="icon solid fa-camera circled"><span class="label">Photos</span></h2>
 							</header> -->
-							<div class="row gtr-25">
-								<div class="col-6">
-									<div class="image fit"><img src="/images/ASA-logo.jpg" alt="Image of Automotive Service Association Logo"></div>
-								</div>
-								<div class="col-6">
-									<div class="image fit"><img src="/images/wesupportnastf.jpg" alt="Image of National Automotive Service Task Force Logo"></div>
-								</div>
-								<div class="col-6">
-									<div class="image fit"><img src="/images/Supportourtroops.jpg" alt="Collage of United States Military Logo's explaming we support our Military Members."></div>
-								</div>
-								
-							</div>
-						</section>
-					</div>
-				</div>
-			</div>
+              <div class="row gtr-25">
+                <div class="col-6">
+                  <div class="image fit">
+                    <img
+                      src="/images/ASA-logo.jpg"
+                      alt="Image of Automotive Service Association Logo"
+                    />
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="image fit">
+                    <img
+                      src="/images/wesupportnastf.jpg"
+                      alt="Image of National Automotive Service Task Force Logo"
+                    />
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="image fit">
+                    <img
+                      src="/images/Supportourtroops.jpg"
+                      alt="Collage of United States Military Logo's explaming we support our Military Members."
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		</div>
-
-		<!-- Scripts -->
-			<script src="/assets/js/jquery.min.js"></script>
-			<script src="/assets/js/jquery.dropotron.min.js"></script>
-			<script src="/assets/js/jquery.scrolly.min.js"></script>
-			<script src="/assets/js/jquery.scrollex.min.js"></script>
-			<script src="/assets/js/browser.min.js"></script>
-			<script src="/assets/js/breakpoints.min.js"></script>
-			<script src="/assets/js/util.js"></script>
-			<script src="/assets/js/main.js"></script>
-
-	</body>
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.dropotron.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>
