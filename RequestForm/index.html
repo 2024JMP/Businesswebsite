@@ -111,10 +111,12 @@
                     </div>
                   </form>
 
-                  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+                  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
                   <script type="text/javascript">
                     // Initialize EmailJS with your user ID
-                    emailjs.init("72wAcQ0jzTJtM1uDC");
+                    (function() {
+                        emailjs.init("72wAcQ0jzTJtM1uDC");
+                    })();
 
                     // Rate limiting implementation
                     const RATE_LIMIT = 3; // Maximum submissions per hour
@@ -125,53 +127,87 @@
                     function validateForm(event) {
                       event.preventDefault();
                       
-                      // Rate limiting check
-                      const now = Date.now();
-                      if (now - lastSubmissionTime > RATE_LIMIT_WINDOW) {
-                        submissionCount = 0;
-                      }
-                      
-                      if (submissionCount >= RATE_LIMIT) {
-                        alert("Too many submissions. Please try again later.");
-                        return false;
-                      }
+                      try {
+                        // Rate limiting check
+                        const now = Date.now();
+                        if (now - lastSubmissionTime > RATE_LIMIT_WINDOW) {
+                          submissionCount = 0;
+                        }
+                        
+                        if (submissionCount >= RATE_LIMIT) {
+                          throw new Error("Too many submissions. Please try again later.");
+                        }
 
-                      // Get form data
-                      const form = document.getElementById('contact-form');
-                      const formData = new FormData(form);
-                      
-                      // Create template parameters
-                      const templateParams = {
-                        to_name: "John's Mobile Programming",
-                        from_name: formData.get('user_name'),
-                        reply_to: formData.get('user_email'),
-                        phone: formData.get('user_phone') || 'Not provided',
-                        message: formData.get('user_message')
-                      };
+                        // Get form data
+                        const form = document.getElementById('contact-form');
+                        if (!form) {
+                          throw new Error("Form not found");
+                        }
 
-                      // Disable submit button
-                      const submitBtn = document.getElementById('submitBtn');
-                      submitBtn.disabled = true;
-                      submitBtn.textContent = 'Sending...';
+                        const formData = new FormData(form);
+                        
+                        // Validate required fields
+                        const name = formData.get('user_name');
+                        const email = formData.get('user_email');
+                        const message = formData.get('user_message');
 
-                      // Send the form
-                      emailjs.send("service_9lwqd67", "template_clnwtrn", templateParams)
-                        .then(
-                          function() {
-                            alert("Message sent successfully!");
-                            submissionCount++;
-                            lastSubmissionTime = Date.now();
-                            form.reset();
-                          },
-                          function(error) {
-                            alert("Failed to send message. Please try again.");
-                            console.error("EmailJS error:", error);
-                          }
-                        )
-                        .finally(() => {
+                        if (!name || !email || !message) {
+                          throw new Error("Please fill in all required fields");
+                        }
+
+                        // Create template parameters
+                        const templateParams = {
+                          to_name: "John's Mobile Programming",
+                          from_name: name,
+                          reply_to: email,
+                          phone: formData.get('user_phone') || 'Not provided',
+                          message: message
+                        };
+
+                        // Disable submit button
+                        const submitBtn = document.getElementById('submitBtn');
+                        if (!submitBtn) {
+                          throw new Error("Submit button not found");
+                        }
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = 'Sending...';
+
+                        // Send the form
+                        emailjs.send("service_9lwqd67", "template_clnwtrn", templateParams)
+                          .then(
+                            function(response) {
+                              console.log("SUCCESS", response);
+                              alert("Message sent successfully!");
+                              submissionCount++;
+                              lastSubmissionTime = Date.now();
+                              form.reset();
+                            },
+                            function(error) {
+                              console.error("FAILED", error);
+                              throw new Error("Failed to send message: " + error.text);
+                            }
+                          )
+                          .catch(error => {
+                            console.error("EmailJS Error:", error);
+                            alert(error.message || "Failed to send message. Please try again.");
+                          })
+                          .finally(() => {
+                            if (submitBtn) {
+                              submitBtn.disabled = false;
+                              submitBtn.textContent = 'Send';
+                            }
+                          });
+
+                      } catch (error) {
+                        console.error("Form Error:", error);
+                        alert(error.message || "An error occurred. Please try again.");
+                        // Re-enable submit button in case of error
+                        const submitBtn = document.getElementById('submitBtn');
+                        if (submitBtn) {
                           submitBtn.disabled = false;
                           submitBtn.textContent = 'Send';
-                        });
+                        }
+                      }
 
                       return false;
                     }
