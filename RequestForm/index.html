@@ -142,9 +142,10 @@
                       
                       // Create template parameters
                       const templateParams = {
+                        to_name: "John's Mobile Programming",
                         from_name: formData.get('user_name'),
-                        from_email: formData.get('user_email'),
-                        phone_number: formData.get('user_phone'),
+                        reply_to: formData.get('user_email'),
+                        phone: formData.get('user_phone') || 'Not provided',
                         message: formData.get('user_message')
                       };
 
