@@ -33,6 +33,7 @@
     />
     <meta property="og:url" content="https://www.johnsmobileprogramming.com" />
     <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/main2.css">
     <noscript><link rel="stylesheet" href="/assets/css/main.css" /></noscript>
   </head>
   <body class="right-sidebar is-preload">
@@ -90,6 +91,44 @@
                            title="Please enter a valid email address"
                            maxlength="100" />
 
+                    <script>
+                      document.addEventListener("DOMContentLoaded", function () {
+                        // Calculate "tomorrow" (at least 24 hours from now)
+                        const now = new Date();
+                        const minDate = new Date(now.getTime() + 24 * 60 * 60 * 1000); // add 24h
+
+                        // Format it as YYYY-MM-DD
+                        const yyyy = minDate.getFullYear();
+                        const mm = String(minDate.getMonth() + 1).padStart(2, '0');
+                        const dd = String(minDate.getDate()).padStart(2, '0');
+                        const formattedMinDate = `${yyyy}-${mm}-${dd}`;
+
+                        // Apply to both date fields
+                        document.getElementById("primaryDate").setAttribute("min", formattedMinDate);
+                        document.getElementById("secondaryDate").setAttribute("min", formattedMinDate);
+                      });
+                    </script>
+                    
+                    <div class="dandtDiv">
+                      <p>Please Choose Date and Time</p>
+                    </div>
+                    <div class="dateAndTime">
+                      <div class="primaryDT">
+                        <label for="primaryDate">First Choice:</label>
+                        <input type="date" id="primaryDate" name="primary_date" required/>
+
+                        <label for="primaryTime">Time:</label>
+                        <input type="time" id="primaryTime" name="primary_time" required/>
+                      </div>
+                      <div class="secondaryDT">
+                        <label for="secondaryDate">Second Choice:</label>
+                        <input type="date" id="secondaryDate" name="secondary_date" required/>
+
+                        <label for="secondaryTime">Time:</label>
+                        <input type="time" id="secondaryTime" name="secondary_time" required/>
+                      </div>
+                    </div>
+
                     <label for="message">Message:</label>
                     <textarea
                       id="message"
@@ -100,13 +139,11 @@
                       pattern="[A-Za-z0-9\s\-'.,!?]{10,1000}"
                       title="Please enter a valid message (10-1000 characters)"
                     ></textarea>
-                    <div
-                      style="
-                        margin-top: 5%;
-                        display: flex;
-                        justify-content: flex-end;
-                      "
-                    >
+
+                    <div class="warnMsgandBtn">
+                      <div class="warningMsg">
+                        <p style="margin: 0;">If your appointment has not been confirmed within 24 hours, please feel free to call  208-215-6447 during business hours Mon. - Fri. 8am - 5pm PST.</p>
+                      </div>
                       <button type="submit" id="submitBtn">Send</button>
                     </div>
                   </form>
@@ -150,8 +187,12 @@
                         const name = formData.get('user_name');
                         const email = formData.get('user_email');
                         const message = formData.get('user_message');
+                        const fcd = formData.get('primary_date');
+                        const fct = formData.get('primary_time');
+                        const scd = formData.get('secondary_date');
+                        const sct = formData.get('secondary_time');
 
-                        if (!name || !email || !message) {
+                        if (!name || !email || !message || !fcd || !fct || !scd || !sct) {
                           throw new Error("Please fill in all required fields");
                         }
 
@@ -161,6 +202,10 @@
                           from_name: name,
                           reply_to: email,
                           phone: formData.get('user_phone') || 'Not provided',
+                          first_choice_date: fcd,
+                          first_choice_time: fct,
+                          second_choice_date: scd,
+                          second_choice_time: sct,
                           message: message
                         };
 
@@ -215,196 +260,22 @@
                 </section>
               </article>
             </div>
-            <div class="col-4 col-12-mobile" id="sidebar">
-              <section>
-                <header>
-                  <h3>Programming Available For:</h3>
-                </header>
-                <!-- <p>
-										Tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-									</p> -->
-                <div class="row gtr-50">
-                  <div class="col-4">
-                    <div class="image fit">
-                      <img
-                        src="/images/CarLogos/Ford-logo.jpg"
-                        alt="Image of Ford Logo"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-8">
-                    <h4>Ford</h4>
-                  </div>
-                  <div class="col-4">
-                    <div class="image fit">
-                      <img
-                        src="/images/CarLogos/Chevrolet-logo.jpg"
-                        alt="Image of Chevrolet Logo"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-8">
-                    <h4>Chevrolet</h4>
-                  </div>
-                  <div class="col-4">
-                    <div class="image fit">
-                      <img
-                        src="/images/CarLogos/GMC-logo.jpg"
-                        alt="Image of GMC Logo"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-8">
-                    <h4>GMC</h4>
-                  </div>
-                  <div class="col-4">
-                    <div class="image fit">
-                      <img
-                        src="/images/CarLogos/RAM-logo.jpg"
-                        alt="Image of Dodge RAM Logo"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-8">
-                    <h4>RAM</h4>
-                  </div>
-                  <div class="col-4">
-                    <div class="image fit">
-                      <img
-                        src="/images/CarLogos/toyota-logo.jpg"
-                        alt="Image of Toyota Logo"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-8">
-                    <h4>Toyota</h4>
-                  </div>
-                  <div class="col-4">
-                    <div class="image fit">
-                      <img
-                        src="/images/CarLogos/lexus-logo.jpg"
-                        alt="Image of Lexus Logo"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-8">
-                    <h4>Lexus</h4>
-                  </div>
-                  <div class="col-4">
-                    <div class="image fit">
-                      <img
-                        src="/images/CarLogos/honda-logo.jpg"
-                        alt="Image of Honda Logo"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-8">
-                    <h4>Honda</h4>
-                  </div>
-                  <div class="col-4">
-                    <div class="image fit">
-                      <img
-                        src="/images/CarLogos/acura-logo.jpg"
-                        alt="Image of Acura Logo"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-8">
-                    <h4>Acura</h4>
-                  </div>
-                  <div class="col-4">
-                    <div class="image fit">
-                      <img
-                        src="/images/CarLogos/dodge-logo.jpg"
-                        alt="Image of Dodge Logo"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-8">
-                    <h4>Dodge</h4>
-                  </div>
-                  <div class="col-4">
-                    <div class="image fit">
-                      <img
-                        src="/images/CarLogos/cadillac-logo.jpg"
-                        alt="Image of Cadillac Logo"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-8">
-                    <h4>Cadillac</h4>
-                  </div>
-                  <div class="col-4">
-                    <div class="image fit">
-                      <img
-                        src="/images/CarLogos/chrysler-logo.jpg"
-                        alt="Image of Chrysler Logo"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-8">
-                    <h4>Chrysler</h4>
-                  </div>
-                  <div class="col-8">
-                    <h4>And Many More...</h4>
-                    <p>
-                      <span style="font-weight: bold; font-size: small"
-                        >Lincoln, Mercury, Pontiac, Oldsmobile, Buick, Saturn,
-                        Scion, Jeep, Fiat and Alfa Romeo</span
-                      >
-                    </p>
-                  </div>
-                  <p></p>
-                </div>
-                <footer>
-                  <!-- <a href="#" class="button">Magna Adipiscing</a> -->
-                </footer>
-              </section>
-            </div>
-          </div>
-          <hr />
-          <div class="row">
-            <article class="col-4 col-12-mobile special">
-              <header>
-                <h1 style="font-size: 1.25em">Advanced Diagnostics</h1>
-              </header>
-              <ul>
-                <li>Electrical Systems</li>
-                <li>Communication Networks</li>
-                <li>Computer / Module</li>
-                <li>Electric Vehicles</li>
-                <li>Hybrid Vehicles</li>
-                <li>Advance Driver Assistance Systems (ADAS)</li>
-                <li>Tire Pressure Monitoring System (TPMS)</li>
-                <li>Drivability Concerns</li>
-              </ul>
-            </article>
+          <hr id="reqFormHR"/>
+          <div class="row" style="padding-bottom: 5%;">
             <article class="col-4 col-12-mobile special">
               <header>
                 <h1 style="font-size: 1.25em">Vehicle Programming</h1>
               </header>
               <p>
-                We specialize in vehicle module flashing and programming with
-                the same precision and expertise as a dealership. Our advanced
-                capabilities ensure that your vehicle's systems, including ECM
-                (Engine Control Module), TCM (Transmission Control Module), and
-                BCM (Body Control Module) are updated and optimized to the
-                highest standards, without the dealership overhead. Trust in us
-                for dealership-level quality with the personalized attention
-                only independent experts can provide.
+                We specialize in vehicle module flashing and programming with the same precision and expertise as a dealership. Our advanced capabilities ensure that your vehicle's systems, including <span style="font-weight: bold;">ECM</span> (Engine Control Module), <span style="font-weight: bold;">TCM</span> (Transmission Control Module), and <span style="font-weight: bold;">BCM</span> (Body Control Module) are updated and optimized to the highest standards, without the dealership overhead. Trust in us for dealership-level quality with the personalized attention only independent experts can provide.
               </p>
             </article>
             <article class="col-4 col-12-mobile special">
               <header>
-                <h1 style="font-size: 1.25em">Security Programming</h1>
+                <h1 style="font-size: 1.25em">Key Services</h1>
               </header>
               <p>
-                We provide expert services in PIN / Security Code retrieval for
-                advanced vehicle security systems. Our precision ensures that
-                your vehicle's security components, such as immobilizer resets
-                and smart key programming are fully functional. Delivering
-                dealership-level expertise with a focus on security and
-                reliability.
+                We provide expert services in Automotive Keys for advanced vehicle security systems as well as conventional automotive keys. Our precision ensures that your vehicle's security components, such as immobilizers and smart keys are fully functional. Delivering dealership-level expertise with a focus on security and reliability our Keys are also backed by a 1-Year warranty.
               </p>
             </article>
           </div>
@@ -413,13 +284,13 @@
 
       <!-- Footer -->
       <div id="footer">
-        <div class="container" style="width: 100%; padding: 2%">
+        <div class="container" style="width: 100%; padding: 0;">
           <div class="row">
-            <div class="googleServiceMap">
+            <div class="googleServiceMap" style="display: flex; justify-content: center; width: 33%;">
               <iframe
                 src="https://www.google.com/maps/d/u/0/embed?mid=1AwEeMqFPAt6DPaYtFzZuVCq_BRtmyMc&ehbc=2E312F&noprof=1"
-                width="463"
-                height="391"
+                width="500"
+                height="400"
                 title="Google Maps Location for Johns Mobile Programming services offered. (Rathdrum, Hayden, Post Falls, Coeur d'Alene,Athol, Ponderay)"
                 aria-label="Google Maps showing pins of towns within idaho where Johns Mobile Programming is offering services."
               ></iframe>
@@ -496,24 +367,8 @@
                 <div class="col-6">
                   <div class="image fit">
                     <img
-                      src="/images/ASA-logo.jpg"
-                      alt="Image of Automotive Service Association Logo"
-                    />
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="image fit">
-                    <img
                       src="/images/wesupportnastf.jpg"
                       alt="Image of National Automotive Service Task Force Logo"
-                    />
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="image fit">
-                    <img
-                      src="/images/Supportourtroops.jpg"
-                      alt="Collage of United States Military Logo's explaming we support our Military Members."
                     />
                   </div>
                 </div>
