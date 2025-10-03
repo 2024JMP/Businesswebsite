@@ -1,10 +1,11 @@
 .autoListDiv {
   position: relative;
-  width: 100%;
-  height: 50%;
-  background-image: url("/images/pic06.jpg");
-  background-size: cover;
-  background-position: center;
+}
+
+@media (max-width: 767px) {
+    .autoListDiv > a > img {
+        opacity: 0%;
+    }
 }
 
 .autoList {
@@ -18,6 +19,12 @@
   font-size: 20px;
   font-weight: bold;
   z-index: 1;
+}
+
+@media (max-width: 767px) {
+    .autoList {
+        font-size: 13px;
+    }
 }
 
 .reqServBtn {
@@ -106,6 +113,40 @@
     background: #feffce;
     padding: 0.5rem 1rem 0.5rem 1rem;
     border: solid 1px;
+}
+
+/*  */
+
+/*  ABOUT SECTION P & H2 */
+
+.aboutH2 {
+    font-size: 2em;
+}
+
+@media (max-width: 767px) {
+    .aboutH2 {
+        font-size: x-large;
+    }
+}
+
+.aboutP {
+    font-size: 140%
+}
+
+@media (max-width: 767px) {
+    .aboutP {
+        font-size: 100%;
+        text-align: center;
+    }
+}
+/*  */
+
+/* carousel FONT! */
+
+@media (max-width: 767px){
+    .longServiceName {
+        font-size: 75%;
+    }
 }
 
 /*  */
